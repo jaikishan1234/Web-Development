@@ -13,6 +13,10 @@ body {
     justify-content: center;
 }
 
+#main {
+  background: #FFFFFF;
+}
+
 .title {
     color: white;
     padding-top: 50px;
