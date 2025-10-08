@@ -1,0 +1,45 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html, 
+body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+#parent {
+    height: 400px;
+    width: 100%;
+    background: #333;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: nowrap;
+    overflow: auto;
+}
+
+#parent::-webkit-scrollbar {
+    display: none;
+}
+
+.child {
+    height: 100%;
+    width: 250px;
+    background-color: white;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.child img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
