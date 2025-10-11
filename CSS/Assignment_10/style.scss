@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+
+    section {
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        flex-grow: 1;
+        transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    section:hover {
+        flex-grow: 2;
+    }
+
+    section:nth-child(1) {
+        background-image: url("/CSS/Assignment_10/Assets/Zenitsu.jpg");
+    }
+
+    section:nth-child(2) {
+        background-image: url("/CSS/Assignment_10/Assets/Ichigo.jpg");
+    }
+
+    section:nth-child(3) {
+        background-image: url("/CSS/Assignment_10/Assets/Killua.jpg");
+    }
+
+    section:nth-child(4) {
+        background-image: url("/CSS/Assignment_10/Assets/Levi.jpg");
+    }
+
+    section:nth-child(5) {
+        background-image: url("/CSS/Assignment_10/Assets/Itachi.jpg");
+    }
+}
