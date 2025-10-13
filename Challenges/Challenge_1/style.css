@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+    to right,
+    #b9c8d3 0%,   /* cool bluish-gray on the left */
+    #e8d5c5 100%  /* warm peach-beige on the right */
+  );
+}
+
+#wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+main {
+  flex: 1;  /* pushes footer to the bottom when content is short */
+}
+
+/* Nav Bar */
+
+header {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.clean {
+    color: black;
+    font-weight: 600;
+}
+
+nav {
+    width: 400px;
+    gap: 20px;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+ul li  {
+    list-style-type: none;
+}
+
+ul a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.google-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;                    
+  border: 1px solid #000;
+  border-radius: 12px;
+  padding: 8px 40px;
+  font-weight: 500;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.google-play i {
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.google-play:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+
+/* main content */
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.shirt {
+    position: absolute;
+    top: 20px;
+    left: 500px;
+}
+
+.shirt img {
+    height: 600px;
+}
+
+.left-hover-effect {
+    position: absolute;
+    top: 100px;
+    left: 510px;
+    z-index: 30;
+    font-size: 17px;
+}
+
+.right-hover-effect {
+    position: absolute;
+    top: 210px;
+    left: 950px;
+    z-index: 30;
+    font-size: 17px;
+}
+
+.bottom-left {
+    position: absolute;
+    top: 350px;
+    left: 300px;
+}
+
+.stars a {
+    text-decoration: none;
+    color: yellow;
+}
+
+.bottom-left .stars i {
+  color: yellow;
+  font-size: 40px;
+}
+
+.bottom-left p{
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+}
+
+
+.card {
+    position: absolute;
+    height: 250x;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 430px;
+    left: 1250px;
+    border-radius: 10px;
+    background-color: #DFDBD8;
+}
+
+.card img {
+    height: 60%;
+    width: 70%;
+}
+
+
+
+/* Footer shell */
+.cta-footer{
+  background:#162529;          
+  padding:18px 20px;
+  width:100%;
+}
+
+.cta-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+}
+
+/* Overlapping avatars */
+.avatars{
+  display:flex;
+}
+
+.avatars img{
+  width:44px; height:44px;
+  border-radius:12px;           
+  object-fit:cover;
+  border:2px solid #162529;     
+  box-shadow:0 0 0 1px rgba(255,255,255,.1); 
+  margin-left:-10px;            
+}
+
+.avatars img:first-child{ margin-left:0; }
+
+.avatars-2 {
+   display:flex; 
+}
+
+.avatars-2 img{
+  width:44px; height:44px;
+  border-radius:12px;           
+  object-fit:cover;
+  border:2px solid #162529;     
+  box-shadow:0 0 0 1px rgba(255,255,255,.1); 
+  margin-left: 12px;            
+}
+
+/* Count text */
+.count{
+  margin-left:16px;
+  font-size:32px;
+  font-weight:600;
+  color:#f2f4f5;
+  letter-spacing:.5px;
+}
+
+/* Left pack (avatars + count) */
+.left-group{
+  display:flex;
+  align-items:center;
+}
+
+/* Pill CTA button */
+.cta-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#fff;
+  color:#0f1416;
+  padding:14px 22px;
+  border-radius:12px;           
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 1px 0 rgba(0,0,0,.05), 0 6px 16px rgba(0,0,0,.18);
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.cta-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 22px rgba(0,0,0,.22);
+}
+
+
+
+
