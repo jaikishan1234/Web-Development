@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'helvetica neue';
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: #0f0f23;
+  background-image: 
+    linear-gradient(to right, rgba(102, 126, 234, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(102, 126, 234, 0.15) 1px, transparent 1px),
+    linear-gradient(to right, rgba(102, 126, 234, 0.3) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(102, 126, 234, 0.3) 2px, transparent 2px);
+  background-size: 40px 40px, 40px 40px, 200px 200px, 200px 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card p{
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.card p span{
+  font-weight: 600;
+  color: royalblue;
+}
+.card {
+  width: 450px;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.15) 0%, 
+    rgba(240, 235, 255, 0.25) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+}
+
+
+.outer {
+  height: 20px;
+  border-radius: 50px;
+  width: 100%;
+  background-color: rgb(184, 184, 184);
+}
+
+
+.inner {
+  height: 100%;
+  width: 0%;
+  border-radius: 50px;
+  background-color: #0db4b9;
+}
+
+.bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.bottom h2{
+  font-size: 60px;
+  font-family: monospace;
+}
+
+.bottom button {
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #0db4b9 0%, #09868b 100%);
+  color: white;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(13, 180, 185, 0.25);
+}
+
+.bottom button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 180, 185, 0.4);
+}
+
+.bottom button:active {
+  transform: scale(0.98);
+}
