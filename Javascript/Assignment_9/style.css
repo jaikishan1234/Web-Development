@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+    color: #fff;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background:  linear-gradient(135deg, #f4f4f4, #cfcfcf);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body:focus {
+    outline: none;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 38px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff70;
+}
+
+#piano {
+    width: 650px;
+    height: 280px;
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 20px 40px #0007;
+}
+
+.white-keys {
+    display: flex;
+    height: 100%;
+    gap: 4px;
+}
+
+.white-key {
+    flex: 1;
+    background: linear-gradient(to bottom, #ffffff, #e5e5e5);
+    border-radius: 6px;
+    border: 1px solid #999;
+    box-shadow: 0 4px 10px #0005 inset, 0 4px 10px #0005;
+    color: black;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    transition: 0.1s ease;
+}
+
+.white-key:active {
+    transform: translateY(4px);
+    background: #dcdcdc;
+    box-shadow: 0 1px 5px #0006 inset;
+}
+
+.black-key {
+    position: absolute;
+    top: 20px;
+    width: 45px;
+    height: 140px;
+    background: linear-gradient(to bottom, #333, #000);
+    border-radius: 6px;
+    box-shadow: 0 8px 15px #000b;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 5px;
+    font-size: 14px;
+    transition: 0.1s ease;
+}
+
+.black-key:active {
+    transform: translateY(4px);
+    background: linear-gradient(to bottom, #222, #000);
+}
+
+.bk1 { left: calc(650px / 7 * 1 - 10px); }
+.bk2 { left: calc(650px / 7 * 2.95 - 15px); }
+.bk3 { left: calc(650px / 7 * 3.95 - 22px); }
+.bk4 { left: calc(650px / 7 * 5 - 30px); }
+.bk5 { left: calc(650px / 7 * 6 - 33px); }
