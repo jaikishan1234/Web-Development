@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: linear-gradient(135deg, #232526, #414345);
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, #232526, #414345);
+    padding: 30px;
+
+}
+
+section {
+    height: 100%;
+    width: 500px;
+    background-color: black;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.all-reels {
+    height: 100%;
+    width: 100%;
+    
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.all-reels::-webkit-scrollbar {
+    display: none;
+}
+
+.reel {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: cadetblue;
+    border-radius: 20px;
+    overflow: hidden;   
+    margin-bottom: 10px;
+    scroll-snap-align: start;
+    scroll-snap-type: always;
+}
+
+.reel video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.reel .bottom {
+    padding: 40px 30px;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.945));
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.bottom .user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.bottom .user h4 {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.bottom .user button {
+    background-color: transparent;
+    padding: 3px 5px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 3px;
+    color: white;
+    border: 1px solid white;
+}
+
+.bottom>h3 {
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.bottom .user img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.right {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    width: 50px;
+    position: absolute;
+    right: 0;
+    /* height: 100%; */
+    /* transform: translateX(100%); */
+    bottom: 16%;
+    color: white;
+    /* background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.288)); */
+}
+
+.right h4, 
+.right h6 {
+    color: white;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.right h4 {
+    cursor: pointer;
+}
+
+.right i {
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.right > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center;
+}
+
+.love {
+    color: red;
+}
