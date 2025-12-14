@@ -1,0 +1,319 @@
+/* --- RESET & VARIABLES --- */
+:root {
+  --bg-color: #101014;
+  --sidebar-width: 80px;
+  --glass-bg: #1c1c24;
+  --text-white: #ffffff;
+  --text-gray: #a1a1a1;
+  --accent-blue: #4dabf7;
+  --radius: 30px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-white);
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+/* --- LAYOUT --- */
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.sidebar {
+  width: var(--sidebar-width);
+  background: #1c1c24;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 10;
+}
+.logo {
+  font-size: 1.5rem;
+  color: var(--accent-blue);
+  margin-bottom: 3rem;
+}
+.nav-item {
+  color: var(--text-gray);
+  font-size: 1.2rem;
+  margin: 1.5rem 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.nav-item:hover,
+.nav-item.active {
+  color: var(--text-white);
+}
+.nav-item.active {
+  color: var(--accent-blue);
+}
+.profile {
+  margin-top: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url("https://ui-avatars.com/api/?name=User&background=0D8ABC&color=fff");
+  background-size: cover;
+}
+
+/* --- MAIN CONTENT --- */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+.view-section {
+  display: none;
+  height: 100%;
+}
+.view-section.active-view {
+  display: grid;
+}
+
+/* --- BENTO GRID LAYOUT --- */
+#dashboard-view {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  /* FIX: Increased to 480px so bottom cards are NOT cut off */
+  grid-template-rows: 480px 1fr;
+  gap: 24px;
+  height: 100%;
+}
+
+/* 1. WEATHER CARD */
+.weather-card {
+  grid-column: 1;
+  grid-row: 1;
+  background: linear-gradient(180deg, #2c3e50 0%, #000000 100%);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.search-box {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.search-box input {
+  background: transparent;
+  border: none;
+  color: white;
+  width: 100%;
+  outline: none;
+  margin-left: 10px;
+}
+.main-weather-icon {
+  width: 120px;
+}
+.temp-big {
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1;
+  margin: 10px 0;
+}
+.location-date {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+  margin-top: auto;
+}
+
+/* 2. HIGHLIGHTS CONTAINER */
+.highlights-container {
+  grid-column: 2;
+  grid-row: 1;
+  background: var(--glass-bg);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 16px;
+  height: 100%;
+}
+
+.highlight-card {
+  background: #101014;
+  border-radius: 18px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  min-height: 0; /* Prevents flex items from overflowing */
+}
+.hl-title {
+  color: var(--text-gray);
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+}
+.hl-value {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.hl-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+.card-icon {
+  font-size: 1.5rem;
+}
+.hl-desc {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 5px;
+}
+
+/* Sun Visuals */
+.sun-visual {
+  position: relative;
+  height: 50px;
+  margin-top: 5px;
+  border-bottom: 1px solid #333;
+}
+.sun-arc {
+  width: 80px;
+  height: 40px;
+  border: 2px dashed #ffc107;
+  border-radius: 80px 80px 0 0;
+  border-bottom: 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.sun-icon {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #101014;
+  padding: 2px;
+  color: #ffc107;
+}
+.sun-time-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+/* 3. FORECAST CONTAINER */
+.forecast-container {
+  grid-column: 1;
+  grid-row: 2;
+  background: var(--glass-bg);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.forecast-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+.forecast-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 0;
+}
+.f-day {
+  width: 80px;
+  color: var(--text-gray);
+  font-size: 0.95rem;
+}
+.f-temp {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* 4. MAP CONTAINER */
+.map-container {
+  grid-column: 2;
+  grid-row: 2;
+  background: #101014;
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.map-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent-blue);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: 0.3s;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+/* Responsive Mobile */
+@media (max-width: 1024px) {
+  #dashboard-view {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+    gap: 10px;
+  }
+  .highlight-card {
+    min-height: 150px;
+  }
+  .sidebar {
+    display: none;
+  }
+}
