@@ -1,0 +1,319 @@
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0d0d16; /* Deep dark blue-black */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- AMBIENT GLOWS --- */
+.glow-purple {
+    position: absolute; top: -100px; left: -100px; width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(118, 74, 235, 0.2) 0%, rgba(0,0,0,0) 70%);
+    z-index: -1; pointer-events: none;
+}
+.glow-cyan {
+    position: absolute; top: 0; right: 0; width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0, 200, 255, 0.15) 0%, rgba(0,0,0,0) 60%);
+    z-index: -1; pointer-events: none;
+}
+.wavy-lines {
+    position: absolute; top: 0; right: 0; width: 100%; height: 100%;
+    z-index: -1; pointer-events: none;
+}
+
+/* --- LAYOUT --- */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.left-info { flex: 1; padding-right: 50px; z-index: 2; margin-top: 20px; }
+
+/* --- BADGE (Matches Reference) --- */
+.badge-container {
+    margin-bottom: 40px;
+    display: inline-block;
+    
+    /* Logic to stick to left edge */
+    margin-left: -100vw;
+    padding-left: 100vw;
+    padding-right: 15px;
+    
+    /* Flat Left, Round Right */
+    border-radius: 0 50px 50px 0;
+    
+    /* Solid gradient look */
+    background: linear-gradient(90deg, #7b5eea, #9b72ee);
+    box-shadow: 0 5px 15px rgba(123, 94, 234, 0.3);
+    
+    position: relative;
+    z-index: 10;
+}
+
+.badge {
+    background: transparent;
+    padding: 12px 50px 12px 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: white;
+    display: block;
+    letter-spacing: -1px;
+}
+
+/* --- TEXT & CONTACT --- */
+.intro-text p {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+.highlight { color: #a29bfe; font-weight: 600; }
+
+.contact-header { font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; margin-top: 40px; }
+.contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 15px 30px;
+    font-size: 0.9rem; color: #ddd;
+}
+.contact-item { display: flex; align-items: center; }
+.contact-item i {
+    width: 26px; height: 26px; background: white; color: #0d0d16;
+    border-radius: 50%; text-align: center; line-height: 26px;
+    margin-right: 10px; font-size: 0.8rem;
+}
+
+/* --- PROFILE IMAGE (Vertical Pill + Cyan Background) --- */
+.profile-wrapper {
+    position: relative;
+    width: 340px;
+    height: 420px;
+    margin-right: 20px;
+}
+
+.orbit-line {
+    position: absolute;
+    top: 30px; left: 30px; width: 100%; height: 100%;
+    border: 1px solid rgba(162, 155, 254, 0.4);
+    border-radius: 200px; /* Vertical Pill Shape */
+    z-index: 0;
+}
+
+.profile-mask {
+    width: 100%; height: 100%;
+    border-radius: 200px; 
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+
+}
+
+.profile-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.9; 
+    mix-blend-mode: hard-light; 
+}
+
+/* --- PURPLE CARD (Solid, Darker) --- */
+.glass-card {
+    /* Stick to left logic */
+    margin-left: -100vw;
+    padding-left: calc(100vw + 60px);
+    padding-right: 60px;
+    
+    /* Layout */
+    display: flex;
+    gap: 100px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    
+    /* Visuals - Darker purple gradient */
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.85), rgba(120, 60, 220, 0.85));
+    border-radius: 0 60px 60px 0;
+    box-shadow: 15px 15px 50px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 5;
+    margin-bottom: 50px;
+}
+
+.col-left, .col-right { flex: 1; display: flex; flex-direction: column; gap: 40px; }
+
+/* Headings inside card */
+.section-head {
+    font-size: 1.6rem;
+    font-weight: 800;
+    font-style: italic;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.pill-date {
+    font-size: 0.75rem;
+    border: 1px solid white;
+    padding: 3px 15px;
+    border-radius: 20px;
+    margin-left: 20px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.sub-text { font-size: 0.95rem; color: #e0e0e0; font-weight: 300; }
+
+/* --- ICONS GRID (3x2) --- */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 10px;
+    width: fit-content;
+}
+
+.tech-icon {
+    width: 55px; height: 55px;
+    border-radius: 14px;
+    display: flex; justify-content: center; align-items: center;
+    font-weight: 800; font-size: 1.4rem;
+    background: #0b0b14; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    cursor: default;
+}
+
+/* Adobe Colors */
+.xd { color: #ff61f6; } 
+.pr { color: #9999ff; }
+.ae { color: #d8a5ff; }
+.ai { color: #ff9a00; }
+.id { color: #ff3366; }
+.ps { color: #31a8ff; }
+
+
+/* --- LIST GRIDS WITH VERTICAL LINE --- */
+.list-grid {
+    position: relative; /* Essential for positioning the line */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two Columns */
+    gap: 12px 50px; /* Wider gap to give the line space */
+    font-size: 0.9rem;
+    color: #eee;
+    font-weight: 400;
+}
+
+/* This creates the vertical line in the middle */
+.list-grid::before {
+    content: '';
+    position: absolute;
+    left: 45%;
+    top: 5px;    /* Start slightly down from top */
+    bottom: 5px; /* Stop slightly before bottom */
+    width: 1px;  /* Line thickness */
+    background: rgba(255, 255, 255, 0.3); /* The line color (semi-transparent white) */
+    transform: translateX(-50%); /* Center perfectly */
+}
+
+
+/* --- RESPONSIVE MOBILE SETTINGS --- */
+@media (max-width: 900px) {
+    /* 1. Layout Structure */
+    .top-section {
+        flex-direction: column-reverse; /* Put image on top, text below */
+        align-items: center;
+        text-align: center;
+    }
+
+    .left-info {
+        padding-right: 0;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Forces all text/badges to center */
+    }
+
+    /* 2. Badge: Remove stick-to-left logic and center it */
+    .badge-container {
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: 0;
+        border-radius: 50px; /* Fully rounded on mobile */
+        width: auto;
+        padding: 5px 30px;
+    }
+    .badge {
+        padding: 0;
+        font-size: 1.8rem;
+    }
+
+    /* 3. Card: Remove stick-to-left logic and center contents */
+    .glass-card {
+        margin-left: 0;
+        padding-left: 20px; /* Normal padding */
+        padding-right: 20px;
+        width: 100%;
+        border-radius: 30px; /* Rounded corners on all sides */
+        
+        flex-direction: column;
+        gap: 40px;
+        align-items: center; /* Center everything inside */
+        text-align: center;
+    }
+
+    /* 4. Contact Grid: Center items */
+    .contact-grid {
+        grid-template-columns: 1fr; /* 1 column */
+        justify-items: center;      /* Center icons/text */
+        gap: 15px;
+    }
+
+    /* 5. Profile Image */
+    .profile-wrapper {
+        margin-right: 0;
+        width: 280px;
+        height: 350px;
+    }
+
+    /* 6. List Grids: Stack to 1 column and center text */
+    .list-grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 10px;
+        text-align: center;
+        width: 100%;
+    }
+    .list-grid::before {
+        display: none; /* Hide vertical line on mobile */
+    }
+
+    /* 7. Headings: Center them */
+    .section-head {
+        justify-content: center;
+    }
+
+    /* 8. Tech Icons: Center the grid */
+    .tech-grid {
+        justify-content: center;
+        margin: 10px auto 0 auto;
+    }
+}
