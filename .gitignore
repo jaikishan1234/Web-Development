@@ -1,0 +1,84 @@
+############################
+# OS / Editor files
+############################
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.log
+
+############################
+# Environment variables
+############################
+.env
+.env.*
+!.env.example
+
+############################
+# Node / JavaScript
+############################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+############################
+# Frontend build outputs
+############################
+dist/
+build/
+.out/
+.next/
+.nuxt/
+.svelte-kit/
+coverage/
+
+############################
+# Backend build outputs
+############################
+lib/
+bin/
+target/
+__pycache__/
+*.pyc
+
+############################
+# Framework specific
+############################
+.vite/
+.cache/
+.parcel-cache/
+
+############################
+# Logs
+############################
+logs/
+*.log
+
+############################
+# Testing
+############################
+coverage/
+.nyc_output/
+
+############################
+# IDEs
+############################
+.vscode/
+!.vscode/settings.json
+.idea/
+*.iml
+
+############################
+# Docker
+############################
+docker-data/
+docker-volume/
+
+############################
+# Misc
+############################
+tmp/
+temp/
+*.pid
