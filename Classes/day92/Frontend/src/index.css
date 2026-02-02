@@ -1,0 +1,52 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-main: #212121;
+  --bg-note: #494949;
+  --text-main: #fffdf9;
+  --radius: 0.75rem;
+  --gap: 1rem;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+}
+
+.notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  padding: 1.5rem clamp(1rem, 5vw, 3rem);
+}
+
+.note {
+  background-color: var(--bg-note);
+  padding: 1rem;
+  border-radius: var(--radius);
+  max-width: 20rem;
+  width: 100%;
+  color: var(--text-main);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
