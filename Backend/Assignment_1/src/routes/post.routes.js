@@ -10,7 +10,7 @@ const identifyUser = require("../middlewares/auth.middleware")
  * @route POST /api/posts [protected]
  * @description Create a post with the content and image (optional) provided in the request body. The post should be associated with the user that the request come from
  */
-postRouter.post("/", upload.single("chacha"), identifyUser, postController.createPostController)
+postRouter.post("/", upload.single("image"), identifyUser, postController.createPostController)
 
 
 /**
